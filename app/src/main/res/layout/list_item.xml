@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/list_layout"
+    android:padding="10dp"
+    app:cardCornerRadius="10dp"
+    android:background="#E0E0E0"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_marginBottom="4dp">
+
+
+
+    <ImageView
+        android:id="@+id/img"
+        android:layout_width="60dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/img_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toRightOf="@id/img"
+        android:ellipsize="marquee"
+        android:fadingEdge="none"
+        android:text="UnnitedStatedddAmriccca"
+        android:textColor="#455a64"
+        android:textSize="17sp" />
+    <TextView
+        android:id="@+id/extra"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="India"
+        android:textColor="#2196f3"
+        android:layout_below="@id/img_name"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@id/img"
+        android:layout_marginLeft="10dp"/>
+
+
+
+</RelativeLayout>
