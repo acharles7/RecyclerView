@@ -1,6 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
 
-</android.support.constraint.ConstraintLayout>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="10dp"
+
+    android:orientation="vertical"
+    tools:context=".ParentActivity">
+
+    <android.support.design.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:backgroundTint="#dedede"
+        android:foregroundGravity="center_vertical"
+        android:id="@+id/card"
+        app:cardCornerRadius="10dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_margin="10dp"
+            android:gravity="center_horizontal|center_vertical"
+            android:textSize="22sp"
+            android:text="Please Enter Your Details"/>
+    </android.support.design.card.MaterialCardView>
+    <EditText
+        android:shadowColor="#000000"
+        android:layout_width="300dp"
+        android:layout_marginTop="25dp"
+        android:layout_height="50dp"
+        android:id="@+id/editText_name"
+        android:padding="7dp"
+        android:layout_below="@+id/card"
+        android:textColor="#1e88e5"
+        android:background="#eceff1"
+        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        android:hint="Name" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/editText_surname"
+        android:hint="Nick Name"
+        android:layout_marginTop="8dp"
+        android:padding="7dp"
+        android:textColor="#1e88e5"
+        android:backgroundTint="#eceff1"
+        android:background="#f4511e"
+        android:layout_centerHorizontal="true"
+        android:inputType="text"
+        android:layout_below="@id/editText_name" />
+
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:id="@+id/editText_Marks"
+        android:padding="7dp"
+        android:textColor="#1e88e5"
+        android:backgroundTint="#eceff1"
+        android:inputType="text"
+        android:background="#eceff1"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:hint="Country"
+        android:layout_below="@+id/editText_surname" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/editText_Marks"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+
+        <Button
+            android:id="@+id/btn1"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="#37474f"
+            android:text="Add Data"
+            android:textColor="#fff" />
+
+        <Button
+            android:id="@+id/btn2"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="20dp"
+            android:layout_toRightOf="@id/btn1"
+            android:backgroundTint="#607D8B"
+            android:text="BACK"
+            android:textColor="#fff" />
+
+    </LinearLayout>
+
+</RelativeLayout>

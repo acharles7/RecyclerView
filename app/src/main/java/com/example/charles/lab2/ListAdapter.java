@@ -5,6 +5,8 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.support.annotation.NonNull;
+import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -17,6 +19,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
     private static final String TAG = "ListAdapter";
@@ -26,18 +29,25 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
     private Context mContext;
 
     public ListAdapter(ArrayList<String> mImg, ArrayList<String> mImg_name, Context mContext) {
+        Log.d(TAG, "ListAdapter: In listAdapter iiiiiiiiii"+ mImg_name);
         this.mImg = mImg;
         this.mImg_name = mImg_name;
         this.mContext = mContext;
     }
 
+    public ListAdapter(List list, Context context) {
+    }
+
     @NonNull
     @Override
     public ViewHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
+        Log.d(TAG, "onCreateViewHolder: In onCreayeViewHolder");
         @SuppressLint("ResourceType")
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.list_item,viewGroup, false);
         ViewHolder holder = new ViewHolder(view);
         return holder;
+
+
     }
 
     @Override
@@ -50,16 +60,19 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
                 .load(mImg.get(i))
                 .into(holder.img1);
         holder.textView.setText(mImg_name.get(i));
-        //holder.img.setImageURI(Uri.parse(mImg.get(i)));
-                
-    }
+
+        }
+
+
 
     @Override
     public int getItemCount() {
         return mImg.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder{
+
+
+public class ViewHolder extends RecyclerView.ViewHolder{
 
         ImageView img1;
         TextView textView, subTitle;
@@ -71,6 +84,18 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder>{
             textView = itemView.findViewById(R.id.img_name);
             subTitle = itemView.findViewById(R.id.extra);
             relativeLayout = itemView.findViewById(R.id.list_layout);
+
+            textView.setOnClickListener(new View.OnClickListener(){
+
+                @Override
+                public void onClick(View view) {
+
+                    Snackbar snackbar = Snackbar.make(view,textView.getText().toString()+" || "+subTitle.getText().toString(),Snackbar.LENGTH_LONG);
+                    snackbar.show();
+                }
+            });
+
+
         }
     }
 }

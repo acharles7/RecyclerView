@@ -1,33 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/main_activity">
+
+
+
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/appbar"
         android:theme="@style/Theme.AppCompat.Light.DarkActionBar">
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="60dp"
+            android:tooltipText="@string/app_name"
+            app:titleTextColor="#ff1da1f2"
             android:background="#212121"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_main" />
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recycleView"
+        android:layout_below="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="630dp"
+
+        android:layout_marginTop="25dp"
+        android:scrollbars="vertical"
+        tools:ignore="UnknownId">
+
+    </android.support.v7.widget.RecyclerView>
+
+
+    <android.support.design.widget.BottomNavigationView
+        android:layout_width="match_parent"
+        android:id="@+id/bottom_nav"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom|end|center_vertical|center_horizontal"
+        android:background="#e2e2e2"
+        app:menu="@menu/menu_main" />
+
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
+        android:layout_margin="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_above="@+id/bottom_nav"
+        android:layout_alignParentEnd="true"
         android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:backgroundTint="#000000"
+        app:srcCompat="@android:drawable/ic_menu_add" />
 
-</android.support.design.widget.CoordinatorLayout>
+
+
+</RelativeLayout>

@@ -37,7 +37,7 @@
         android:id="@+id/extra"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="India"
+        android:text="CA, USA"
         android:textColor="#2196f3"
         android:layout_below="@id/img_name"
         android:layout_centerVertical="true"

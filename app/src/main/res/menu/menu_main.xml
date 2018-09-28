@@ -1,10 +1,27 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.charles.lab2.MainActivity">
+
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/home"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="Home"
+        android:icon="@mipmap/baseline_polymer_black_18dp"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/like"
+        android:orderInCategory="100"
+        android:title="View"
+        android:icon="@mipmap/baseline_spa_black_18dp"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/comment"
+        android:orderInCategory="100"
+        android:title="Last"
+        android:icon="@mipmap/baseline_trip_origin_black_18dp"
         app:showAsAction="never" />
 </menu>
